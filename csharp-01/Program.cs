@@ -1,13 +1,17 @@
-﻿// Screen Sound
-string mensagemDeBoasVindas = "Boas vindas ao Screen Sound";
-Console.WriteLine(mensagemDeBoasVindas);
+﻿// See https://aka.ms/new-console-template for more information
+string boasVindas = "Seja bem vindo ao Screen Sound";
 
-Console.WriteLine("Digite uma nota");
-String? linha = Console.ReadLine();
+Console.WriteLine(boasVindas);
+
+Console.WriteLine("Digite sua média");
+
+String linha = Console.ReadLine();
+
 int notaMedia = int.Parse(linha);
 
-if (notaMedia <= 5){
-    Console.WriteLine("Nota insuficiente!");
-} else {
-    Console.WriteLine("Você passou!!!");
-}   
+if(notaMedia <= 5){
+    Console.WriteLine("Você foi reprovado!!!");
+} else{
+    Console.WriteLine("Você foi aprovado!!!");
+}
+
