@@ -40,7 +40,7 @@ void ExibirOpcoesDoMenu()
             break;
         case 3: AvaliarUmaBanda();
             break;
-        case 4: Console.WriteLine("Você escolheu a opção " + opcaoEscolhidaNumerica);
+        case 4: ExibeMediaBanda();
             break;
         case -1: Console.WriteLine("Tchau tchau :)");
             break;
@@ -69,10 +69,7 @@ void ExibindoListaDeBandas(){
    foreach (string banda in bandasRegistradas.Keys){
     Console.WriteLine($"Banda: {banda}");
    }
-   Console.WriteLine("\nDigite um tecla qualquer para voltar ao menu de musicas");
-    Console.ReadKey();
-    Console.Clear();
-    ExibirOpcoesDoMenu();
+   MensagemDeVolta();
 }
 
 void ExibeTitulo(string titulo) {
@@ -99,15 +96,40 @@ void AvaliarUmaBanda(){
         Console.Clear();
         ExibirOpcoesDoMenu();
     } else{
-        Console.ForegroundColor = ConsoleColor.Red;
-        Console.WriteLine($"A banda {nomeDaBanda} não está cadastrada");
-        Console.ResetColor();
-        Console.WriteLine("\nDigite um tecla qualquer para voltar ao menu de musicas");
-        Console.ReadKey();
-        Console.Clear();
-        ExibirOpcoesDoMenu();
+        MesagemErroCadastro(nomeDaBanda);
+        MensagemDeVolta();
     }
 }
 
+void ExibeMediaBanda(){
+    Console.Clear();
+    ExibeTitulo("Exibindo a média das bandas");
+   foreach (string banda in bandasRegistradas.Keys){
+    Console.WriteLine($"Banda: {banda}");
+   }
+   Console.Write("\nDigite a banda que deseja consultar a média: ");
+   string nomeDaBanda = Console.ReadLine();
+    if(bandasRegistradas.ContainsKey(nomeDaBanda)){
+        
+        List<int> notasDaBanda = bandasRegistradas[nomeDaBanda];
+        Console.WriteLine($"\nA média da banda {nomeDaBanda} é: {notasDaBanda.Average()}");
+        MensagemDeVolta();
+    } else{
+        MesagemErroCadastro(nomeDaBanda);
+        MensagemDeVolta();
+    }
+}
+
+void MensagemDeVolta(){
+    Console.WriteLine("\nDigite um tecla qualquer para voltar ao menu principal");
+    Console.ReadKey();
+    Console.Clear();
+    ExibirOpcoesDoMenu();
+}
+void MesagemErroCadastro(string nomeDaBanda){
+    Console.ForegroundColor = ConsoleColor.Red;
+    Console.WriteLine($"A banda {nomeDaBanda} não está cadastrada!!!");
+    Console.ResetColor();
+}
 
 ExibirOpcoesDoMenu();
