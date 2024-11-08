@@ -1,26 +1,29 @@
 using System.Diagnostics;
 
 class Musica{
-    public string nome;
-    public string artista;
-    public int duracao;
-    public bool disponivel;
+    public string Nome { get; set; }
+    public string Artista { get; set; }
+    public int Duracao { get; set; }
+    public bool Disponivel  { get; set; }
 
-    public void exibirFichaTecnica(){
-        Console.WriteLine($"Banda: {nome}");
-        Console.WriteLine($"Artista: {artista}");
-        Console.WriteLine($"Duração: {duracao}");
-        if(disponivel){
-            Console.WriteLine($"A banda {nome} está disponivel");
+
+
+    public void ExibirFichaTecnica(){
+        Console.WriteLine($"Banda: {Nome}");
+        Console.WriteLine($"Artista: {Artista}");
+        Console.WriteLine($"Duração: {Duracao}");
+        if(Disponivel){
+            Console.WriteLine($"A banda {Nome} está disponivel");
         } else {
             Console.WriteLine("Necessário a assinatura do Plano plus");
         }
         
     }
 
+
     public void ExibirNomeEArtista()
     {
-        Console.WriteLine($"Nome/Artista: {nome} - {artista}");
+        Console.WriteLine($"Nome/Artista: {Nome} - {Artista}");
     }
 
 

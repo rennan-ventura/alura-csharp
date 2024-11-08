@@ -1,15 +1,15 @@
 ﻿Musica musica1 = new Musica();
-musica1.nome = "Radiohead";
-musica1.artista = "Karma Police";
-musica1.duracao = 200;
-musica1.disponivel = true;
+musica1.Nome = "Radiohead";
+musica1.Artista = "Karma Police";
+musica1.Duracao = 200;
+musica1.Disponivel = true;
 
-musica1.exibirFichaTecnica();
+musica1.ExibirFichaTecnica();
 
 Musica musica2 = new Musica();
-musica2.nome = "Linkin Park";
-musica2.artista = "Vocalista";
-musica2.duracao = 200;
-musica2.disponivel = false;
+musica2.Nome = "Linkin Park";
+musica2.Artista = "Vocalista";
+musica2.Duracao = 200;
+musica2.Disponivel = false;
 
-musica2.exibirFichaTecnica();
+musica2.ExibirFichaTecnica();
