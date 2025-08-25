@@ -1,9 +1,9 @@
 ﻿Musica musica1 = new Musica();
-musica1.Nome = "Radiohead";
-musica1.Artista = "Karma Police";
+musica1.Nome = "Karma Police";
+musica1.Artista = "Radiohead";
 musica1.Duracao = 200;
 musica1.Disponivel = true;
-
+Console.WriteLine(musica1.DescricaoResumida);
 musica1.ExibirFichaTecnica();
 
 Musica musica2 = new Musica();
