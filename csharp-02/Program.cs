@@ -1,15 +1,13 @@
-﻿Musica musica1 = new Musica();
-musica1.Nome = "Karma Police";
-musica1.Artista = "Radiohead";
-musica1.Duracao = 200;
-musica1.Disponivel = true;
-Console.WriteLine(musica1.DescricaoResumida);
-musica1.ExibirFichaTecnica();
+﻿Album albumDoQueen = new Album();
+albumDoQueen.nome = "A night at the opera";
+
+Musica musica1 = new Musica();
+musica1.Nome = "Love of my life";
 
 Musica musica2 = new Musica();
-musica2.Nome = "Linkin Park";
-musica2.Artista = "Vocalista";
-musica2.Duracao = 200;
-musica2.Disponivel = false;
+musica2.Nome = "Bohemian Rhapsody";
 
-musica2.ExibirFichaTecnica();
+albumDoQueen.AdicionarMusica(musica1);
+albumDoQueen.AdicionarMusica(musica2);
+
+albumDoQueen.ExibirMusicasDoAlbum();
